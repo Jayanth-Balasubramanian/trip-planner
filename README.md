@@ -35,11 +35,11 @@ Constraints:
 
 Objective:
 \[
-\max \;\Bigl[\;
-\underbrace{\sum_{d\in D}\sum_{i\notin\{r,e\}} y_i^{d}}_{\text{total distinct spots visited}}\;-\;
-\alpha\Bigl(
+\max \left[\;
+\underbrace{\sum_{d\in D}\sum_{i\notin\{r,e\}} y_i^{d}}_{\text{total distinct spots visited}} -
+\alpha\left(
 \underbrace{\sum_{d\in D}\sum_{(i,j)\in A}T_{ij}\,x_{ij}^{d}}_{\text{driving cost}}
-+\;
++
 \underbrace{\sum_{d\in D}\sum_{i\in V_{\text{stay}}} s_i\,y_i^{d}}_{\text{overnight cost}}
-\Bigr)\Bigr],
+\right)\right]
 \]
