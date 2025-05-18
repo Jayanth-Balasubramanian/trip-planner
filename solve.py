@@ -129,10 +129,8 @@ for alph in alphas:
 
         results.append((net_cost, num_visited))
     else:
-        # infeasible or time-lim limit
         results.append((None, None))
 
-# unpack for plotting, drop any Nones
 print(results)
 costs, visits = zip(*[r for r in results if r[0] is not None])
 
