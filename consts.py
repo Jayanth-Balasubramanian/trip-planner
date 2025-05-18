@@ -41,10 +41,10 @@ def get_locations():
     response = requests.get(url, params=params).json()
 
 
-root = Locations.PRK
-end = Locations.ALP
+ROOT = Locations.PRK
+END = Locations.ALP
 
-mock_distances = [
+MOCK_DISTANCES = [
     [0, 30, 20, 60, 65, 60, 80, 105],  # PRK
     [30, 0, 35, 70, 60, 50, 95, 120],  # THM
     [20, 35, 0, 55, 75, 65, 85, 110],  # JAT
@@ -54,10 +54,14 @@ mock_distances = [
     [80, 95, 85, 90, 110, 120, 0, 60],  # ALP
     [105, 120, 110, 120, 135, 145, 60, 0],  # KOC
 ]
-max_leg = 150
-num_days = 5
+MAX_LEG = 150
+NUM_DAYS = 5
 # locations we can't stay in have a dummy large cost
-stay_cost: dict[Locations, float] = {i: 10**9 for i in Locations}
-stay_cost[Locations.PRK] = 0
-stay_cost[Locations.VRK] = 10**4
-max_stops = 3
+STAY_COST: dict[Locations, float] = {i: 10**9 for i in Locations}
+STAY_COST[Locations.PRK] = 0
+STAY_COST[Locations.VRK] = 10**4
+MAX_NON_STAY_PER_DAY = 2
+MIN_NON_STAY_PER_DAY = 1
+RUPEES_PER_KM = 100 / 10
+TOTAL_LOCS = len(Locations)
+MAX_COST_ESTIMATE = 6 * 10**4  # for normalizing
