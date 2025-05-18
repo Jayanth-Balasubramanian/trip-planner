@@ -20,14 +20,14 @@ API_KEY = "YOUR_API_KEY"
 # TODO: get real maps data
 def get_locations():
     LOCATIONS = {
-        "PRK": "Parakode, Kerala",
-        "THM": "Thenmala, Kerala",
-        "JAT": "Jatayu Earth Center, Kerala",
-        "VRK": "Varkala, Kerala",
-        "NEY": "Neyyar Dam, Kerala",
-        "PON": "Ponmudi, Kerala",
-        "ALP": "Alleppey, Kerala",
-        "KOC": "Kochi, Kerala",
+        "Parakode, Kerala",
+        "Thenmala, Kerala",
+        "Jatayu Earth Center, Kerala",
+        "Varkala, Kerala",
+        "Neyyar Dam, Kerala",
+        "Ponmudi, Kerala",
+        "Alleppey, Kerala",
+        "Kochi, Kerala",
     }
 
     addresses = list(LOCATIONS.values())
@@ -54,8 +54,10 @@ mock_distances = [
     [80, 95, 85, 90, 110, 120, 0, 60],  # ALP
     [105, 120, 110, 120, 135, 145, 60, 0],  # KOC
 ]
+max_leg = 150
 num_days = 5
 # locations we can't stay in have a dummy large cost
 stay_cost: dict[Locations, float] = {i: 10**9 for i in Locations}
 stay_cost[Locations.PRK] = 0
 stay_cost[Locations.VRK] = 10**4
+max_stops = 3
